@@ -1,5 +1,11 @@
 table {
   width: 100%;
+  font-size: 20px;
+
+}
+
+h1{
+text-align: center;
 }
 
 table, th, td {
@@ -10,3 +16,11 @@ th, td {
     padding: 5px;
 }
 
+#test1 {
+  font-weight: bold;
+}
+
+#total{
+  color: red;
+
+}
