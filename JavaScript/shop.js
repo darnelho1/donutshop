@@ -40,11 +40,12 @@ DonutShop.prototype.render = function(){
   var tr = document.createElement('tr');
   var tblLocation = document.createElement('td');
   tblLocation.innerHTML = this.location;
-  tblLocation.setAttribute('id', 'test1');
+  tblLocation.setAttribute('id', 'location');
   tr.appendChild(tblLocation);
 
   for (i=0; i < this.donutsPerHr.length; i++){
     var tblDPH = document.createElement('td');
+    tblDPH.setAttribute('id','DPH')
     tblDPH.innerHTML = this.donutsPerHr[i];
     tr.appendChild(tblDPH);
   }
