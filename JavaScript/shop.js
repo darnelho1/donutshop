@@ -13,15 +13,48 @@ var hours = ['7:00am',
              '6:00pm'];
 
 
-DonutShop=function(location,minCustHrs,maxCustHrs,avgDonutsPerCust,totalDonutsSld,donutsPerHr){
-    this.location = location;
-    this.minCustHrs = minCustHrs;
-    this.maxCustHrs = maxCustHrs;
-    this.avgDonutsPerCust = avgDonutsPerCust;
-    this.totalDonutsSld = '';
-    this.donutsPerHr=[];
-        donutShops.push(this);
+  DonutShop=function(location,minCustHrs,maxCustHrs,avgDonutsPerCust,totalDonutsSld){
+      this.location = location;
+      this.minCustHrs = minCustHrs;
+      this.maxCustHrs = maxCustHrs;
+      this.avgDonutsPerCust = avgDonutsPerCust;
+      this.donutsPerHr=[0];
+      this.totalDonutsSld = 0 ;
+          donutShops.push(this);
+  };
+
+
+
+
+ DonutShop.prototype.calculatedonutsPurchased = function(){
+  for (i = 0; i < hours.length; i++) {
+      var calculate = (Math.floor(Math.random() * (this.maxCustHrs-this.minCustHrs + 1 )) + this.minCustHrs) * this.avgDonutsPerCust;
+      this.donutsPerHr[i] = Math.round(calculate);
+      this.totalDonutsSld = this.totalDonutsSld + Math.round(calculate);
 };
+};
+
+
+
+DonutShop.prototype.render = function(){
+  var tr = document.createElement('tr');
+  var td = document.createElement('td');
+  td.innerHTML = this.location;
+  tr.appendChild(td);
+
+  for (i=0; i < this.donutsPerHr.length; i++){
+    var test = document.createElement('td');
+    test.innerHTML = this.donutsPerHr[i];
+    tr.appendChild(test);
+  }
+
+  var total = document.createElement('td');
+  total.innerHTML = this.totalDonutsSld;
+  tr.appendChild(total);
+
+  document.getElementById('donutshops').appendChild(tr);
+
+}
 
 var dwtnShop = new DonutShop('Downtown',8,43,4.5);
 var cHillShop = new DonutShop('Capitol Hill',4,37,2.00);
@@ -31,16 +64,31 @@ var ballardShop = new DonutShop('Ballard',8,58,3.75);
 
 
 
-var test =[];
+dwtnShop.calculatedonutsPurchased();
+dwtnShop.render();
+
+cHillShop.calculatedonutsPurchased();
+cHillShop.render();
+
+sluShop.calculatedonutsPurchased();
+sluShop.render();
+
+wdgwoodShop.calculatedonutsPurchased();
+wdgwoodShop.render();
+
+ballardShop.calculatedonutsPurchased();
+ballardShop.render();
 
 
 
- DonutShop.prototype.calculatedonutsPurchased = function(){
-  return hours.forEach(function(hour){
-      var calculate = (Math.floor(Math.random() * (this.maxCustHrs-this.minCustHrs + 1 )) + this.minCustHrs) * this.avgDonutsPerCust;
-      test = calculate;
-});
-};
+
+
+
+
+
+
+
+/*
 
 hour.forEach(function(hour){
   return (Math.floor(Math.random() * (dwtnShop.maxCustHrs-dwtnShop.minCustHrs + 1)) + dwtnShop.minCustHrs) * dwtnShop.avgDonutsPerCust;
@@ -51,3 +99,4 @@ hour.forEach(function(hour){
 var testDonutsSold = (Math.floor(Math.random() * (dwtnShop.maxCustHrs-dwtnShop.minCustHrs + 1)) + dwtnShop.minCustHrs) * dwtnShop.avgDonutsPerCust;
 
 var hour = (Math.floor(Math.random() * (cHillShop.maxCustHrs-this.minCustHrs + 1 )) + cHillShop.minCustHrs) * cHillShop.avgDonutsPerCust;
+*/
