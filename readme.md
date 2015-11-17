@@ -7,3 +7,8 @@ The maximum number of customers per hour.
 The average number of donuts purchased per customer.
 
 It calculates the total donuts sold per hour per location and pushes that data into an html table.
+<<<<<<< HEAD
+=======
+
+Coder: Darnell Holder
+>>>>>>> model

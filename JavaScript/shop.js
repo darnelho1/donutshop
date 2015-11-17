@@ -38,18 +38,21 @@ var hours = ['7:00am',
 
 DonutShop.prototype.render = function(){
   var tr = document.createElement('tr');
-  var td = document.createElement('td');
-  td.innerHTML = this.location;
-  tr.appendChild(td);
+  var tblLocation = document.createElement('td');
+  tblLocation.innerHTML = this.location;
+  tblLocation.setAttribute('id', 'location');
+  tr.appendChild(tblLocation);
 
   for (i=0; i < this.donutsPerHr.length; i++){
-    var test = document.createElement('td');
-    test.innerHTML = this.donutsPerHr[i];
-    tr.appendChild(test);
+    var tblDPH = document.createElement('td');
+    tblDPH.setAttribute('id','DPH')
+    tblDPH.innerHTML = this.donutsPerHr[i];
+    tr.appendChild(tblDPH);
   }
 
   var total = document.createElement('td');
   total.innerHTML = this.totalDonutsSld;
+  total.setAttribute('id', 'total');
   tr.appendChild(total);
 
   document.getElementById('donutshops').appendChild(tr);
