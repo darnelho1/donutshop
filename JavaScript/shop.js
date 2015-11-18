@@ -105,16 +105,15 @@ var newShop = function(){
     console.log(newShopMaxCust);
     console.log(userShop);
     console.log(donutShops);
-
-
-
 }
 
 
 
-/*
+
 document.getElementById('newShopButton').addEventListener('click',newShop);
 
+
+/*
 for (i=0; i < donutShops.length; i++){
   if (userShop.location === donutShops[i].location){
 
