@@ -83,10 +83,30 @@ ballardShop.calculatedonutsPurchased();
 ballardShop.render();
 
 
+//var newShopbuton = document.getElementById('newShopForm');
 
 
 
 
+var newShop = function(){
+    var newShopLoc, newShopMinCust, newShopMaxCust, newShopAvgDonutsPerCust;
+    newShopLoc = document.getElementById('locationName').value;
+    newShopMinCust = document.getElementById('minCust').value;
+    newShopMaxCust = document.getElementById('maxCust').value;
+    newShopAvgDonutsPerCust = document.getElementById('avgDonutsPerCust').value;
+    var userShop = new DonutShop(newShopLoc,newShopMinCust,newShopMaxCust,newShopAvgDonutsPerCust);
+    //donutShops.push(userShop);
+    userShop.calculatedonutsPurchased();
+    userShop.render();
+
+    console.log(newShopLoc);
+    console.log(newShopMaxCust);
+    console.log(userShop);
+
+}
+
+
+document.getElementById('newShopButton').addEventListener('click',newShop);
 
 
 
