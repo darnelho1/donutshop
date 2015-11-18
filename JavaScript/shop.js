@@ -28,9 +28,11 @@ var hours = ['7:00am',
 
  DonutShop.prototype.calculatedonutsPurchased = function(){
   for (i = 0; i < hours.length; i++) {
+      console.log(this.maxCustHrs,this.avgDonutsPerCust,this.minCustHrs,this.totalDonutsSld,this.donutsPerHr);
       var calculate = (Math.floor(Math.random() * (this.maxCustHrs-this.minCustHrs + 1 )) + this.minCustHrs) * this.avgDonutsPerCust;
       this.donutsPerHr[i] = Math.round(calculate);
       this.totalDonutsSld = this.totalDonutsSld + Math.round(calculate);
+
 };
 };
 
@@ -91,27 +93,34 @@ ballardShop.render();
 var newShop = function(){
     var newShopLoc, newShopMinCust, newShopMaxCust, newShopAvgDonutsPerCust;
     newShopLoc = document.getElementById('locationName').value;
-    newShopMinCust = document.getElementById('minCust').value;
-    newShopMaxCust = document.getElementById('maxCust').value;
-    newShopAvgDonutsPerCust = document.getElementById('avgDonutsPerCust').value;
+    newShopMinCust = parseInt(document.getElementById('minCust').value);
+    newShopMaxCust = parseInt(document.getElementById('maxCust').value);
+    newShopAvgDonutsPerCust = Number(document.getElementById('avgDonutsPerCust').value);
     var userShop = new DonutShop(newShopLoc,newShopMinCust,newShopMaxCust,newShopAvgDonutsPerCust);
-    //donutShops.push(userShop);
+    donutShops.push(userShop);
     userShop.calculatedonutsPurchased();
     userShop.render();
 
     console.log(newShopLoc);
     console.log(newShopMaxCust);
     console.log(userShop);
+    console.log(donutShops);
+
+
 
 }
 
 
-document.getElementById('newShopButton').addEventListener('click',newShop);
-
-
-
 
 /*
+document.getElementById('newShopButton').addEventListener('click',newShop);
+
+for (i=0; i < donutShops.length; i++){
+  if (userShop.location === donutShops[i].location){
+
+  }
+}
+
 
 hour.forEach(function(hour){
   return (Math.floor(Math.random() * (dwtnShop.maxCustHrs-dwtnShop.minCustHrs + 1)) + dwtnShop.minCustHrs) * dwtnShop.avgDonutsPerCust;
