@@ -13,6 +13,7 @@ var hours = ['7:00am',
              '6:00pm'];
 
 
+/////////////Donut Shop Object Constructor/////////
   DonutShop=function(location,minCustHrs,maxCustHrs,avgDonutsPerCust,totalDonutsSld){
       this.location = location;
       this.minCustHrs = minCustHrs;
@@ -25,10 +26,9 @@ var hours = ['7:00am',
 
 
 
-
+///////Method for calculating donuts purchased/////////
  DonutShop.prototype.calculatedonutsPurchased = function(){
   for (i = 0; i < hours.length; i++) {
-      console.log(this.maxCustHrs,this.avgDonutsPerCust,this.minCustHrs,this.totalDonutsSld,this.donutsPerHr);
       var calculate = (Math.floor(Math.random() * (this.maxCustHrs-this.minCustHrs + 1 )) + this.minCustHrs) * this.avgDonutsPerCust;
       this.donutsPerHr[i] = Math.round(calculate);
       this.totalDonutsSld = this.totalDonutsSld + Math.round(calculate);
@@ -37,6 +37,8 @@ var hours = ['7:00am',
 };
 
 
+
+//////////Method for rending the table in HTML////////////
 
 DonutShop.prototype.render = function(){
   var tr = document.createElement('tr');
@@ -61,6 +63,9 @@ DonutShop.prototype.render = function(){
 
 }
 
+
+//////////Donut shop objects/////////////
+
 var dwtnShop = new DonutShop('Downtown',8,43,4.5);
 var cHillShop = new DonutShop('Capitol Hill',4,37,2.00);
 var sluShop = new DonutShop('South Lake Union',9,23,6.33);
@@ -68,6 +73,8 @@ var wdgwoodShop = new DonutShop('Wedge Wood',2,28,1.25);
 var ballardShop = new DonutShop('Ballard',8,58,3.75);
 
 
+
+////////////Running methods against the donut shop objects////////
 
 dwtnShop.calculatedonutsPurchased();
 dwtnShop.render();
@@ -85,8 +92,8 @@ ballardShop.calculatedonutsPurchased();
 ballardShop.render();
 
 
-//var newShopbuton = document.getElementById('newShopForm');
 
+/////////////Function to create new donut shop objects based on user input///////
 
 
 
@@ -96,31 +103,91 @@ var newShop = function(){
     newShopMinCust = parseInt(document.getElementById('minCust').value);
     newShopMaxCust = parseInt(document.getElementById('maxCust').value);
     newShopAvgDonutsPerCust = Number(document.getElementById('avgDonutsPerCust').value);
-    var userShop = new DonutShop(newShopLoc,newShopMinCust,newShopMaxCust,newShopAvgDonutsPerCust);
-    donutShops.push(userShop);
-    userShop.calculatedonutsPurchased();
-    userShop.render();
 
-    console.log(newShopLoc);
-    console.log(newShopMaxCust);
-    console.log(userShop);
+
+
+
+
+    donutShops.forEach(function(i){
+      if (document.getElementById('locationName').value.toUpperCase() === i.location.toUpperCase()){
+          console.log(i);
+          i.maxCustHrs=parseInt(document.getElementById('maxCust').value);
+          i.minCustHrs=parseInt(document.getElementById('minCust').value);
+          i.avgDonutsPerCust=parseInt(document.getElementById('avgDonutsPerCust').value);
+          console.log(i);
+          i.calculatedonutsPurchased();
+          i.render();
+      }
+      /*else {
+          var userShop = new DonutShop(newShopLoc,newShopMinCust,newShopMaxCust,newShopAvgDonutsPerCust);
+
+          donutShops.push(userShop);
+          userShop.calculatedonutsPurchased();
+          userShop.render();
+          console.log(donutShops);
+     }
+     */
+   })
+ }
+
+
+
+
+/*
+var newShop = function(){
+    var newShopLoc, newShopMinCust, newShopMaxCust, newShopAvgDonutsPerCust;
+    newShopLoc = document.getElementById('locationName').value;
+    newShopMinCust = parseInt(document.getElementById('minCust').value);
+    newShopMaxCust = parseInt(document.getElementById('maxCust').value);
+    newShopAvgDonutsPerCust = Number(document.getElementById('avgDonutsPerCust').value);
+    var userShop = new DonutShop(newShopLoc,newShopMinCust,newShopMaxCust,newShopAvgDonutsPerCust);
+
+
+
+
+
+
+    for (i=0; i < donutShops.length; i++){
+        if (document.getElementById('locationName').value.toUpperCase() === donutShops[i].location.toUpperCase()){
+          console.log(donutShops[i]);
+          donutShops[i].maxCustHrs = parseInt(document.getElementById('maxCust').value);
+          donutShops[i].minCustHrs = parseInt(document.getElementById('minCust').value);
+          donutShops[i].avgDonutsPerCust = parseInt(document.getElementById('avgDonutsPerCust').value);
+          console.log(donutShops[i]);
+          donutShops[i].calculatedonutsPurchased();
+          console.log(donutShops[i]);
+          donutShops[i].render();
+          console.log(donutShops[i]);
+      }
+
+        else {
+          donutShops.push(userShop);
+          userShop.calculatedonutsPurchased();
+          userShop.render();
+    }
+
+}
+
+    //console.log(newShopLoc);
+    //console.log(newShopMaxCust);
+    //console.log(userShop);
     console.log(donutShops);
 }
 
-
-
+*/
+/////Event listener for for User input/////////
 
 document.getElementById('newShopButton').addEventListener('click',newShop);
 
 
+
+
+
+///////Checking to see if user donut shop already exists.////////
+
+
+
 /*
-for (i=0; i < donutShops.length; i++){
-  if (userShop.location === donutShops[i].location){
-
-  }
-}
-
-
 hour.forEach(function(hour){
   return (Math.floor(Math.random() * (dwtnShop.maxCustHrs-dwtnShop.minCustHrs + 1)) + dwtnShop.minCustHrs) * dwtnShop.avgDonutsPerCust;
   dwtnShop.donutsPerHr.push(hour)
