@@ -56,7 +56,7 @@ DonutShop.prototype.render = function(){
 
   var total = document.createElement('td');
   total.innerHTML = this.totalDonutsSld;
-  total.setAttribute('id', 'total');
+  total.setAttribute('class', 'total');
   tr.appendChild(total);
 
   document.getElementById('donutshops').appendChild(tr);
@@ -141,3 +141,16 @@ var newShop = function(){
     /////Event listener for for User input/////////
 
 document.getElementById('newShopButton').addEventListener('click',newShop);
+
+
+/////////Easter Egg that Displays Homer eating when you mouse over the total donuts sold for each shop//////
+var homers= document.getElementsByClassName('total');
+
+for (i=0; i < homers.length; i++){
+  homers[i].onmouseover = function(){
+    document.getElementById('test').src = 'images/homer.gif';
+  }
+  homers[i].onmouseout = function(){
+    document.getElementById('test').src ='';
+  }
+}

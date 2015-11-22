@@ -29,7 +29,7 @@ th{
 
 }
 
-#total{
+.total{
   color: red;
   background-color: #C4A010;
 
@@ -45,6 +45,11 @@ th{
 #newShopForm{
   display: block;
   margin: 0.25em 0;
+}
+
+#test {
+  height: 200px;
+  width: 200px;
 }
 
 
