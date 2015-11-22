@@ -99,102 +99,45 @@ ballardShop.render();
 
 var newShop = function(){
     var newShopLoc, newShopMinCust, newShopMaxCust, newShopAvgDonutsPerCust;
+    var found = false; //Flag for found existing donut shops
     newShopLoc = document.getElementById('locationName').value;
     newShopMinCust = parseInt(document.getElementById('minCust').value);
     newShopMaxCust = parseInt(document.getElementById('maxCust').value);
     newShopAvgDonutsPerCust = Number(document.getElementById('avgDonutsPerCust').value);
 
-
-
-
-
-    donutShops.forEach(function(i){
-      if (document.getElementById('locationName').value.toUpperCase() === i.location.toUpperCase()){
-          console.log(i);
-          i.maxCustHrs=parseInt(document.getElementById('maxCust').value);
-          i.minCustHrs=parseInt(document.getElementById('minCust').value);
-          i.avgDonutsPerCust=parseInt(document.getElementById('avgDonutsPerCust').value);
-          console.log(i);
-          i.calculatedonutsPurchased();
-          i.render();
+     ///////Loop to find existing donut shop objects in donut shop array////
+    for (i=0; i < donutShops.length; i++){
+      if (document.getElementById('locationName').value.toUpperCase() === donutShops[i].location.toUpperCase()){
+          var dsTblLoc= i+1;// var for handling location of donut shop in table
+          document.getElementById('donutshops').deleteRow(dsTblLoc);
+          var knownShop=donutShops[i];
+          console.log(knownShop);
+          knownShop.maxCustHrs=parseInt(document.getElementById('maxCust').value);
+          knownShop.minCustHrs=parseInt(document.getElementById('minCust').value);
+          knownShop.avgDonutsPerCust=parseInt(document.getElementById('avgDonutsPerCust').value);
+          console.log(knownShop);
+          knownShop.calculatedonutsPurchased();
+          console.log(knownShop);
+          knownShop.render();
+          console.log(donutShops);
+          found = true; //sets flag to true if donut shop is found
+        }
       }
-      /*else {
-          var userShop = new DonutShop(newShopLoc,newShopMinCust,newShopMaxCust,newShopAvgDonutsPerCust);
 
+      //////will run if no existing donut shop is found in array////
+      while(found!=true){
+          var userShop = new DonutShop(newShopLoc,newShopMinCust,newShopMaxCust,newShopAvgDonutsPerCust);
           donutShops.push(userShop);
           userShop.calculatedonutsPurchased();
           userShop.render();
           console.log(donutShops);
-     }
-     */
-   })
- }
+          found=true;
 
 
 
-
-/*
-var newShop = function(){
-    var newShopLoc, newShopMinCust, newShopMaxCust, newShopAvgDonutsPerCust;
-    newShopLoc = document.getElementById('locationName').value;
-    newShopMinCust = parseInt(document.getElementById('minCust').value);
-    newShopMaxCust = parseInt(document.getElementById('maxCust').value);
-    newShopAvgDonutsPerCust = Number(document.getElementById('avgDonutsPerCust').value);
-    var userShop = new DonutShop(newShopLoc,newShopMinCust,newShopMaxCust,newShopAvgDonutsPerCust);
-
-
-
-
-
-
-    for (i=0; i < donutShops.length; i++){
-        if (document.getElementById('locationName').value.toUpperCase() === donutShops[i].location.toUpperCase()){
-          console.log(donutShops[i]);
-          donutShops[i].maxCustHrs = parseInt(document.getElementById('maxCust').value);
-          donutShops[i].minCustHrs = parseInt(document.getElementById('minCust').value);
-          donutShops[i].avgDonutsPerCust = parseInt(document.getElementById('avgDonutsPerCust').value);
-          console.log(donutShops[i]);
-          donutShops[i].calculatedonutsPurchased();
-          console.log(donutShops[i]);
-          donutShops[i].render();
-          console.log(donutShops[i]);
-      }
-
-        else {
-          donutShops.push(userShop);
-          userShop.calculatedonutsPurchased();
-          userShop.render();
     }
+  }
 
-}
-
-    //console.log(newShopLoc);
-    //console.log(newShopMaxCust);
-    //console.log(userShop);
-    console.log(donutShops);
-}
-
-*/
-/////Event listener for for User input/////////
+    /////Event listener for for User input/////////
 
 document.getElementById('newShopButton').addEventListener('click',newShop);
-
-
-
-
-
-///////Checking to see if user donut shop already exists.////////
-
-
-
-/*
-hour.forEach(function(hour){
-  return (Math.floor(Math.random() * (dwtnShop.maxCustHrs-dwtnShop.minCustHrs + 1)) + dwtnShop.minCustHrs) * dwtnShop.avgDonutsPerCust;
-  dwtnShop.donutsPerHr.push(hour)
-
-});
-
-var testDonutsSold = (Math.floor(Math.random() * (dwtnShop.maxCustHrs-dwtnShop.minCustHrs + 1)) + dwtnShop.minCustHrs) * dwtnShop.avgDonutsPerCust;
-
-var hour = (Math.floor(Math.random() * (cHillShop.maxCustHrs-this.minCustHrs + 1 )) + cHillShop.minCustHrs) * cHillShop.avgDonutsPerCust;
-*/
