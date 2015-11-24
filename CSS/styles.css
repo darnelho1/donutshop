@@ -39,7 +39,7 @@ body{
 
 #tblDesc {
   font-size: 18px;
-  text-align: center;
+  text-align: left;
   color:#A80303;
   font-weight: bold;
 }
@@ -62,7 +62,7 @@ body{
 }
 
 #secondp{
-  text-align: center;
+  text-align: left;
   font-size: 20px;
 }
 

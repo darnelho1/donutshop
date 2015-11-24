@@ -4,62 +4,99 @@
   <title>Top Pot Donut Shops</title>
 </head>
   <link rel="stylesheet" type="text/css" href="CSS/styles.css">
-
+  <link rel="stylesheet" type="text/css" href="CSS/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="CSS/normalize.css">
+  <div class="container">
   <body id ='body'>
 
-    <h1>Donut Shop Model (Code 201)</h1>
+    <div class="row">
+      <header class="eleven columns">
 
-      <table id = 'donutshops'>
-        <tr>
-          <th>Location</th>
-          <th>7:00am</th>
-          <th>8:00am</th>
-          <th>9:00am</th>
-          <th>10:00am</th>
-          <th>11:00am</th>
-          <th>12:00pm</th>
-          <th>1:00pm</th>
-          <th>2:00pm</th>
-          <th>3:00pm</th>
-          <th>4:00pm</th>
-          <th>5:00pm</th>
-          <th>6:00pm</th>
-          <th>Total</th>
-        </tr>
-      </table>
-
-    <canvas id="myChart" width="1000" height="400"></canvas>
-    <script src="JavaScript/Chart.js"></script>
-
-    <p id="tblDesc">
-    This table shows the estimated nubmer of donuts sold per location. It is based on each locations avg number of customers per hour and average numbers of donuts sold per customer.
-    </p>
-
-    <p id= 'secondp'>
-    You can add new locations or make changes to existing locations in the table using the form below.
-    </p>
-
-    <form id= 'newShopForm'>
-      Location Name:
-      <input id = "locationName" type="text" name="locationname" placeholder="Location Name">
-      <br>
-      Minimum Customer Per Hour:
-      <input id = "minCust" type="text" name="minCust" placeholder="Min Cust Per Hr.">
-      <br>
-      Maximum Customer Per Hour:
-      <input id = "maxCust" type="text" name="maxCust" placeholder="Max Cust Per Hr.">
-      <br>
-      Average Donuts Purchased Per Customer:
-      <input id = "avgDonutsPerCust" type="text" name="avgDonutsPerCust" placeholder="Avg. Donuts Per Customer">
-      <br>
-
-    </form>
-    <button id="newShopButton" type='submit'>Submit</button>
-
-    <div id='test2'>
-        <img id ='test' src="">
+      </header>
     </div>
+
+  <section>
+    <div class="row">
+      <article class= "twelve columns">
+        <h1>Donut Shop Model (Code 201)</h1>
+
+          <table class="u-full-width" id = 'donutshops'>
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>7:00am</th>
+                <th>8:00am</th>
+                <th>9:00am</th>
+                <th>10:00am</th>
+                <th>11:00am</th>
+                <th>12:00pm</th>
+                <th>1:00pm</th>
+                <th>2:00pm</th>
+                <th>3:00pm</th>
+                <th>4:00pm</th>
+                <th>5:00pm</th>
+                <th>6:00pm</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id= "tablebody">
+
+            </tbody>
+          </table>
+      </article>
+    </div>
+
+    <article>
+      <p id="tblDesc">
+      This table shows the estimated nubmer of donuts sold per location. It is based on each locations avg number of customers per hour and average numbers of donuts sold per customer.
+      </p>
+    </article>
+
+    <article>
+
+    <div class="container u-pull-left six columns">
+      <p id= 'secondp'>
+        You can add new locations or make changes to existing locations in the table using the form below.
+      </p>
+
+      <form id= 'newShopForm'>
+        <div class="row">
+          <div class="u-full-width">
+            <label for="example location">Location Name:</label>
+            <input class="u-full-width" id = "locationName" type="text" name="locationname" placeholder="Location Name">
+            <br>
+          </div>
+          <div class="u-full-width">
+            <label for="example min customers"> Minimum Customer Per Hour:</label>
+            <input class ="u-full-width" id = "minCust" type="text" name="minCust" placeholder="Min Cust Per Hr.">
+            <br>
+          </div>
+          <div class="u-full-width">
+            <label for="example max customers"> Maximum Customer Per Hour:</label>
+            <input class="u-full-width" id = "maxCust" type="text" name="maxCust" placeholder="Max Cust Per Hr.">
+            <br>
+          </div>
+          <div class="u-full-width">
+            <label for="example average donuts sold"> Average Donuts Purchased Per Customer:</label>
+            <input class="u-full-width" id = "avgDonutsPerCust" type="text" name="avgDonutsPerCust" placeholder="Avg. Donuts Per Customer">
+            <br>
+          </div>
+        </div>
+      </form>
+
+    <button class="button-primary" id="newShopButton">Submit</button>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        <img class="u-pull-right u-max-full-width" id ='homerPic' src="">
+      </div>
+    </div>
+
+    </article>
+  </section>
+
   </body>
+  </div>
 
   <script src="JavaScript/shop.js"></script>
 

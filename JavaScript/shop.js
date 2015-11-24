@@ -59,7 +59,7 @@ DonutShop.prototype.render = function(){
   total.setAttribute('class', 'total');
   tr.appendChild(total);
 
-  document.getElementById('donutshops').appendChild(tr);
+  document.getElementById('tablebody').appendChild(tr);
 
 }
 
@@ -148,10 +148,10 @@ var homers= document.getElementsByClassName('total');
 
 for (i=0; i < homers.length; i++){
   homers[i].onmouseover = function(){
-    document.getElementById('test').src = 'images/homer.gif';
+    document.getElementById('homerPic').src = 'images/homer.gif';
   }
   homers[i].onmouseout = function(){
-    document.getElementById('test').src ='';
+    document.getElementById('homerPic').src ='';
   }
 };
 
@@ -165,86 +165,3 @@ var locData = donutShops.map(function(locData){
 
 console.log(dsloc)
 
-var ctx = document.getElementById("myChart").getContext("2d");
-var data = {
-    labels: hours,
-    datasets: [
-        {
-            label: "Downtown",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "#1741BF",
-            pointColor: "red",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: dwtnShop.donutsPerHr
-        },
-        {
-            label: "Capitol Hill",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "#17BF68",
-            pointColor: "red",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: cHillShop.donutsPerHr
-        },
-        {
-            label: "South Lake Union",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "#E6DE09",
-            pointColor: "red",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: sluShop.donutsPerHr
-        },
-        {
-            label: "Wedge Wood",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "#AA12C4",
-            pointColor: "red",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: wdgwoodShop.donutsPerHr
-        },
-        {
-            label: "Ballard",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "#12C49D",
-            pointColor: "red",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: ballardShop.donutsPerHr
-        }
-    ]
-};
-
-console.log(data.datasets[1].data);
-
-/*var updateChart =  function(){
-  data.datasets.push("label:'Test'")
-}
-*/
-
-
-options = {
-  multiTooltipTemplate: function(t){
-    var x = data.datasets.map(function(y){
-        return y
-      }).map(function(j){
-        return j.data
-      }).map(function(m){
-        return m.reduce(function(a,b){
-          return a + b;
-        })
-      })
-      console.log(x)
-
-
-      return t.datasetLabel + ' ' + x;
-  }
-}
-var myLineChart = new Chart(ctx).Line(data, options);
