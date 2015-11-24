@@ -18,6 +18,8 @@ th, td {
 th{
   background-color: #90C3D4;
 }
+body{
+}
 #DPH{
   background-color: gray;
 
@@ -45,11 +47,38 @@ th{
 #newShopForm{
   display: block;
   margin: 0.25em 0;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 #test {
-  height: 200px;
-  width: 200px;
+  height: 110px;
+  width: 150px;
 }
 
+#form{
+  height: 200px;
+
+}
+
+#secondp{
+  text-align: center;
+  font-size: 20px;
+}
+
+#homerimage{
+
+
+}
+#form {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        justify-content: center;
+        max-width: 80%;
+    }
+#newShopButton{
+  display: flex;
+  flex-direction: column;
+}
 

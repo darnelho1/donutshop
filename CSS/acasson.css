@@ -1,0 +1,42 @@
+header {
+        border: ;
+        height: 50px;
+        max-width: 80%;
+        background-image: url("http://eatsimplylivewell.com/wp-content/uploads/Top-Pot-Doughnuts.jpg");
+        background-size: 50px 50px;
+    }
+    section {
+        display: flex;
+        flex-direction: row;
+        height: 400px;
+        justify-content: center;
+        max-width: 80%;
+    }
+
+    article {
+        width: 100%;
+        background-color: #f1f1f1;
+    }
+
+    footer {
+        max-width: 80%;
+        background-color: ;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    h2 {
+
+        margin: 10px 5px;
+        background-color: orange;
+        text-align: center;
+    }
+
+    p {
+        margin: 5px 5px;
+    }
+
+    li{
+        display: inline-block;
+    }
+
