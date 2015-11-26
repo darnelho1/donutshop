@@ -20,6 +20,10 @@ th{
 }
 body{
 }
+.navBar2{
+  display: inline-block;
+  font-size: 18px;
+}
 #DPH{
   background-color: gray;
 
