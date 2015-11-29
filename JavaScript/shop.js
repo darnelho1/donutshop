@@ -151,7 +151,7 @@ for (i=0; i < homers.length; i++){
     document.getElementById('homerPic').src = 'images/homer.gif';
   }
   homers[i].onmouseout = function(){
-    document.getElementById('homerPic').src ='';
+    document.getElementById('homerPic').src ='http://unlimiteddonuts.com/wp-content/uploads/2015/02/homer-simpson.jpg';
   }
 };
 

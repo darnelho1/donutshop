@@ -2,29 +2,29 @@
 <html>
 <head>
   <title>Donut Shop Model (Code 201)</title>
-</head>
+  <meta name="author" content="Darnell Holder">
   <link rel="stylesheet" type="text/css" href="CSS/styles.css">
   <link rel="stylesheet" type="text/css" href="CSS/skeleton.css">
   <link rel="stylesheet" type="text/css" href="CSS/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+</head>
+<body id ='body'>
   <div class="container">
-  <body id ='body'>
 
     <div class="row">
-      <header class="twelve columns">
-      <ul class="u-pull-right">
-        <li class="navBar2">
-        <a href=""> Home</a>
-        </li>
-        <li class="navBar2">
-        <a href=""> About</a>
-        </li>
-        <li class="navBar2">
-        <a href=""> Info</a>
-        </li>
-      </ul>
+      <header>
+        <nav class="twelve columns">
+          <p id="navTitle">Donut Shop</p>
+          <ul class="u-pull-right">
+            <li class="navBar2"><a href=""> Home</a></li>
+            <li class="navBar2"><a href=""> About</a></li>
+            <li class="navBar2"><a href=""> Info</a></li>
+          </ul>
+        </nav>
 
-      </header>
     </div>
+    </header>
 
   <section>
     <div class="row">
@@ -57,14 +57,14 @@
     </div>
 
     <article>
-      <p id="tblDesc">
+      <p class="fadeWhite" id="tblDesc">
       This table shows the estimated nubmer of donuts sold per location. It is based on each locations avg number of customers per hour and average numbers of donuts sold per customer.
       </p>
     </article>
 
     <article>
 
-    <div class="container u-pull-left six columns">
+    <div class="container u-pull-left six columns fadeWhite">
       <p id= 'secondp'>
         You can add new locations or make changes to existing locations in the table using the form below.
       </p>
@@ -98,7 +98,7 @@
     </div>
     <div class="row">
       <div class="six columns">
-        <img class="u-pull-right u-max-full-width" id ='homerPic' src="">
+        <img class="u-pull-right u-max-full-width fadeWhite" id ='homerPic' src="http://unlimiteddonuts.com/wp-content/uploads/2015/02/homer-simpson.jpg">
       </div>
     </div>
 
@@ -106,6 +106,12 @@
   </section>
 
   </body>
+
+  </div>
+  <div class=" container row">
+      <footer class="twelve columns" >
+        <p> For more information call (123)-456-7890</p>
+      </footer>
   </div>
 
   <script src="JavaScript/shop.js"></script>

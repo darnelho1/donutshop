@@ -19,9 +19,49 @@ th{
   background-color: #90C3D4;
 }
 body{
+  background-image: url('http://gofitu.com/wp-content/uploads/2015/06/tumblr_static_wf-donuts-1.jpg');
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  background-color: #90C3D4;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  letter-spacing: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+
+section{
+  position: relative;
+  top: 25px;
+
+}
+
+footer{
+  position: relative;
+  top: 40px;
+  background-color: #90C3D4;
+  font: inherit;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+
 }
 .navBar2{
-  display: inline-block;
+  display: inline;
   font-size: 18px;
 }
 #DPH{
@@ -70,8 +110,9 @@ body{
   font-size: 20px;
 }
 
-#homerimage{
-
+#homerPic{
+  height: 400px;
+  width: 600px;
 
 }
 #form {
@@ -86,3 +127,18 @@ body{
   flex-direction: column;
 }
 
+.linkBar {
+  margin: auto;
+  max-width: inherit;
+  background-color: #90C3D4;
+}
+
+#navTitle{
+  display: inline;
+  font-size: 18px;
+
+}
+
+.fadeWhite{
+background-color: rgba(250, 250, 250, .5);
+}
