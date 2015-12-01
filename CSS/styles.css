@@ -83,7 +83,7 @@ footer{
 
 #tblDesc {
   font-size: 18px;
-  text-align: left;
+  text-align: center;
   color:#A80303;
   font-weight: bold;
 }
@@ -140,5 +140,5 @@ footer{
 }
 
 .fadeWhite{
-background-color: rgba(250, 250, 250, .5);
+background-color: rgba(250, 250, 250, .7);
 }

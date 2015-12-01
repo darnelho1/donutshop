@@ -146,7 +146,7 @@ document.getElementById('newShopButton').addEventListener('click',newShop);
 /////////Easter Egg that Displays Homer eating when you mouse over the total donuts sold for each shop//////
 var homers= document.getElementsByClassName('total');
 
-for (i=0; i < homers.length; i++){
+for (i=0; i < donutShops.length; i++){
   homers[i].onmouseover = function(){
     document.getElementById('homerPic').src = 'images/homer.gif';
   }
